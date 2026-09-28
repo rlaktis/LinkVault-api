@@ -1,0 +1,52 @@
+# ==============================================================================
+# PROJECT 06: LinkVault — Relational Bookmarks & Categories API
+# Engineering Plan & Roadmap
+# ==============================================================================
+
+[ ] PHASE 1: Architectural Design & Domain Modeling
+    - 1.1 Domain Requirements & Entities Breakdown (Category & Bookmark)
+    - 1.2 Relational Associations & Foreign Keys (ManyToOne, Directionality, Cascades)
+    - 1.3 Fetch Strategies & The N+1 Problem (LAZY vs EAGER, JOIN FETCH, EntityGraph)
+    - 1.4 Primary Keys & Data Types (UUID vs BIGINT)
+    - 1.5 Validation Rules & Business Invariants
+
+[ ] PHASE 2: Project Scaffolding & Infrastructure
+    - 2.1 Git repository initialization & .gitignore
+    - 2.2 Spring Boot 3.3.x skeleton (Maven, Java 21 LTS, Dependencies)
+    - 2.3 Docker Compose (PostgreSQL 16) & application properties
+    - 2.4 Healthcheck & verifying running database container
+
+[ ] PHASE 3: Database Schema & Flyway Migrations
+    - 3.1 Flyway migration: V1__create_categories_table.sql
+    - 3.2 Flyway migration: V2__create_bookmarks_table.sql (Foreign keys & Indexes)
+    - 3.3 Verifying schema in PostgreSQL
+
+[ ] PHASE 4: Domain Entities & JPA Mapping
+    - 4.1 Base audit entity (createdAt, updatedAt)
+    - 4.2 Category entity mapping & equals/hashCode invariants
+    - 4.3 Bookmark entity mapping (@ManyToOne, FetchType.LAZY)
+
+[ ] PHASE 5: Repositories & Query Optimization
+    - 5.1 CategoryRepository (Derived queries & existence checks)
+    - 5.2 BookmarkRepository (Solving N+1 with JOIN FETCH & @EntityGraph)
+    - 5.3 Pagination & filtering queries
+
+[ ] PHASE 6: Data Transfer Objects (DTOs) & Advanced Validation
+    - 6.1 Category Request/Response DTOs
+    - 6.2 Bookmark Request/Response DTOs
+    - 6.3 Custom Jakarta Validators (@ValidUrl, @HexColor)
+
+[ ] PHASE 7: Service Layer & Business Logic
+    - 7.1 CategoryService (CRUD, slug/uniqueness invariants, deletion rules)
+    - 7.2 BookmarkService (CRUD, category assignment, favorite toggling)
+    - 7.3 Exception handling & RFC 7807 ProblemDetail
+
+[ ] PHASE 8: REST Controller Layer
+    - 8.1 CategoryController (Endpoints, status codes, OpenAPI/Swagger)
+    - 8.2 BookmarkController (Endpoints, pagination, sorting, search)
+
+[ ] PHASE 9: Comprehensive 3-Tier Testing Pyramid
+    - 9.1 Unit Tests (Services & Custom Validators with Mockito/AssertJ)
+    - 9.2 Data Slice Tests (@DataJpaTest for custom queries & N+1 verification)
+    - 9.3 Web Slice Tests (@WebMvcTest for controllers & validation)
+    - 9.4 Integration Tests (@SpringBootTest with Testcontainers / PostgreSQL)
