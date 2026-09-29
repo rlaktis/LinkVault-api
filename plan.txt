@@ -10,11 +10,11 @@
     - 1.4 Primary Keys & Data Types (UUID vs BIGINT) [DONE]
     - 1.5 Validation Rules & Business Invariants [DONE]
 
-[ ] PHASE 2: Project Scaffolding & Infrastructure
-    - 2.1 Git repository initialization & .gitignore
-    - 2.2 Spring Boot 3.3.x skeleton (Maven, Java 21 LTS, Dependencies)
-    - 2.3 Docker Compose (PostgreSQL 16) & application properties
-    - 2.4 Healthcheck & verifying running database container
+[x] PHASE 2: Project Scaffolding & Infrastructure
+    - 2.1 Git repository initialization & .gitignore [DONE]
+    - 2.2 Spring Boot 3.3.x skeleton (Maven, Java 21 LTS, Dependencies) [DONE]
+    - 2.3 Docker Compose (PostgreSQL 16) & application properties [DONE]
+    - 2.4 Healthcheck & verifying running database container [DONE]
 
 [ ] PHASE 3: Database Schema & Flyway Migrations
     - 3.1 Flyway migration: V1__create_categories_table.sql
