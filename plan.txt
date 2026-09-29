@@ -16,10 +16,10 @@
     - 2.3 Docker Compose (PostgreSQL 16) & application properties [DONE]
     - 2.4 Healthcheck & verifying running database container [DONE]
 
-[ ] PHASE 3: Database Schema & Flyway Migrations
-    - 3.1 Flyway migration: V1__create_categories_table.sql
-    - 3.2 Flyway migration: V2__create_bookmarks_table.sql (Foreign keys & Indexes)
-    - 3.3 Verifying schema in PostgreSQL
+[x] PHASE 3: Database Schema & Flyway Migrations
+    - 3.1 Flyway migration: V1__create_categories_table.sql [DONE]
+    - 3.2 Flyway migration: V2__create_bookmarks_table.sql (Foreign keys & Indexes) [DONE]
+    - 3.3 Verifying schema in PostgreSQL [DONE]
 
 [ ] PHASE 4: Domain Entities & JPA Mapping
     - 4.1 Base audit entity (createdAt, updatedAt)
