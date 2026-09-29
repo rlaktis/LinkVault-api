@@ -21,10 +21,10 @@
     - 3.2 Flyway migration: V2__create_bookmarks_table.sql (Foreign keys & Indexes) [DONE]
     - 3.3 Verifying schema in PostgreSQL [DONE]
 
-[ ] PHASE 4: Domain Entities & JPA Mapping
-    - 4.1 Base audit entity (createdAt, updatedAt)
-    - 4.2 Category entity mapping & equals/hashCode invariants
-    - 4.3 Bookmark entity mapping (@ManyToOne, FetchType.LAZY)
+[x] PHASE 4: Domain Entities & JPA Mapping
+    - 4.1 Base audit entity (createdAt, updatedAt) [DONE]
+    - 4.2 Category entity mapping & equals/hashCode invariants [DONE]
+    - 4.3 Bookmark entity mapping (@ManyToOne, FetchType.LAZY) [DONE]
 
 [ ] PHASE 5: Repositories & Query Optimization
     - 5.1 CategoryRepository (Derived queries & existence checks)
