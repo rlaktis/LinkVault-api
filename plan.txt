@@ -36,10 +36,10 @@
     - 6.2 Bookmark Request/Response DTOs [DONE]
     - 6.3 Custom Jakarta Validators (@ValidUrl, @HexColor) [DONE]
 
-[ ] PHASE 7: Service Layer & Business Logic
-    - 7.1 CategoryService (CRUD, slug/uniqueness invariants, deletion rules)
-    - 7.2 BookmarkService (CRUD, category assignment, favorite toggling)
-    - 7.3 Exception handling & RFC 7807 ProblemDetail
+[x] PHASE 7: Service Layer & Business Logic
+    - 7.1 CategoryService (CRUD, slug/uniqueness invariants, deletion rules) [DONE]
+    - 7.2 BookmarkService (CRUD, category assignment, favorite toggling) [DONE]
+    - 7.3 Exception handling & RFC 7807 ProblemDetail [DONE]
 
 [ ] PHASE 8: REST Controller Layer
     - 8.1 CategoryController (Endpoints, status codes, OpenAPI/Swagger)
