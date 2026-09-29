@@ -2,6 +2,8 @@
 target/
 *.class
 
+plan.txt
+
 # Log files
 *.log
 
