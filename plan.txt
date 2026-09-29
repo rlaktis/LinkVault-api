@@ -26,10 +26,10 @@
     - 4.2 Category entity mapping & equals/hashCode invariants [DONE]
     - 4.3 Bookmark entity mapping (@ManyToOne, FetchType.LAZY) [DONE]
 
-[ ] PHASE 5: Repositories & Query Optimization
-    - 5.1 CategoryRepository (Derived queries & existence checks)
-    - 5.2 BookmarkRepository (Solving N+1 with JOIN FETCH & @EntityGraph)
-    - 5.3 Pagination & filtering queries
+[x] PHASE 5: Repositories & Query Optimization
+    - 5.1 CategoryRepository (Derived queries & existence checks) [DONE]
+    - 5.2 BookmarkRepository (Solving N+1 with JOIN FETCH & @EntityGraph) [DONE]
+    - 5.3 Pagination & filtering queries [DONE]
 
 [ ] PHASE 6: Data Transfer Objects (DTOs) & Advanced Validation
     - 6.1 Category Request/Response DTOs
