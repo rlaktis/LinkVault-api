@@ -31,10 +31,10 @@
     - 5.2 BookmarkRepository (Solving N+1 with JOIN FETCH & @EntityGraph) [DONE]
     - 5.3 Pagination & filtering queries [DONE]
 
-[ ] PHASE 6: Data Transfer Objects (DTOs) & Advanced Validation
-    - 6.1 Category Request/Response DTOs
-    - 6.2 Bookmark Request/Response DTOs
-    - 6.3 Custom Jakarta Validators (@ValidUrl, @HexColor)
+[x] PHASE 6: Data Transfer Objects (DTOs) & Advanced Validation
+    - 6.1 Category Request/Response DTOs [DONE]
+    - 6.2 Bookmark Request/Response DTOs [DONE]
+    - 6.3 Custom Jakarta Validators (@ValidUrl, @HexColor) [DONE]
 
 [ ] PHASE 7: Service Layer & Business Logic
     - 7.1 CategoryService (CRUD, slug/uniqueness invariants, deletion rules)
