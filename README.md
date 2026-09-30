@@ -43,4 +43,38 @@ erDiagram
 - **Connection Pool:** HikariCP
 - **Validation:** Jakarta Validation with Custom Annotations (`@ValidUrl`, `@HexColor`)
 - **Error Handling:** RFC 7807 `ProblemDetail`
-- **Testing Pyramid:** JUnit 5, Mockito, AssertJ, `@DataJpaTest`, `@WebMvcTest`, Testcontainers
+- **Testing Pyramid:** JUnit 5, Mockito, AssertJ, `@DataJpaTest`, `@WebMvcTest`, `@SpringBootTest`
+
+---
+
+## 📡 API Endpoints
+
+### Categories (`/api/v1/categories`)
+| Method | Endpoint | Description | Status Code |
+| :--- | :--- | :--- | :--- |
+| `GET` | `/api/v1/categories` | Retrieve all categories with counts | `200 OK` |
+| `GET` | `/api/v1/categories/{id}` | Get category by UUID | `200 OK` |
+| `POST` | `/api/v1/categories` | Create a new category | `201 Created` |
+| `PUT` | `/api/v1/categories/{id}` | Update existing category | `200 OK` |
+| `DELETE` | `/api/v1/categories/{id}` | Delete empty category | `204 No Content` |
+| `PATCH` | `/api/v1/categories/{id}/reassign-and-delete?targetCategoryId={targetId}` | Reassign bookmarks and delete category | `200 OK` |
+
+### Bookmarks (`/api/v1/bookmarks`)
+| Method | Endpoint | Description | Status Code |
+| :--- | :--- | :--- | :--- |
+| `GET` | `/api/v1/bookmarks` | Paginated bookmarks (filter by `categoryId`, `favoriteOnly`, `search`) | `200 OK` |
+| `GET` | `/api/v1/bookmarks/{id}` | Get bookmark with eager category | `200 OK` |
+| `POST` | `/api/v1/bookmarks` | Create bookmark under a category | `201 Created` |
+| `PUT` | `/api/v1/bookmarks/{id}` | Update bookmark fields or category | `200 OK` |
+| `PATCH` | `/api/v1/bookmarks/{id}/favorite` | Toggle bookmark favorite status | `200 OK` |
+| `DELETE` | `/api/v1/bookmarks/{id}` | Delete bookmark by UUID | `204 No Content` |
+
+---
+
+## 🧪 Testing
+
+Run the full automated testing pyramid (69 unit, slice, and integration tests):
+
+```bash
+./mvnw test
+```

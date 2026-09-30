@@ -59,8 +59,10 @@ class BookmarkRepositoryTest {
     @Test
     @DisplayName("Should fetch bookmarks with eager category and verify countByCategoryId")
     void testBookmarkQueriesAndEntityGraph() {
-        Bookmark bookmark1 = Bookmark.create("Spring Boot Docs", "https://spring.io/projects/spring-boot", "Official docs", true, devCategory);
-        Bookmark bookmark2 = Bookmark.create("PostgreSQL Docs", "https://postgresql.org/docs", "DB docs", false, devCategory);
+        Bookmark bookmark1 = Bookmark.create("Spring Boot Docs", "https://spring.io/projects/spring-boot",
+                "Official docs", true, devCategory);
+        Bookmark bookmark2 = Bookmark.create("PostgreSQL Docs", "https://postgresql.org/docs", "DB docs", false,
+                devCategory);
         Bookmark bookmark3 = Bookmark.create("Figma", "https://figma.com", "UI design tool", true, designCategory);
 
         entityManager.persist(bookmark1);

@@ -19,7 +19,8 @@ public interface CategoryRepository extends JpaRepository<Category, UUID> {
     boolean existsByNameIgnoreCase(String name);
 
     /**
-     * Checks if a category with the given name exists excluding a specific ID (for update validation).
+     * Checks if a category with the given name exists excluding a specific ID (for
+     * update validation).
      */
     boolean existsByNameIgnoreCaseAndIdNot(String name, UUID id);
 
