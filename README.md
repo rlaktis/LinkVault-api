@@ -4,36 +4,36 @@ A robust, production-grade Relational Bookmarks & Categories REST API built with
 
 ---
 
-## 🌟 Features
+##  Features
 
-- **🏛️ Clean Layered Architecture (`controller` → `service` → `repository` → `domain` / `dto`):**
+- ** Clean Layered Architecture (`controller` → `service` → `repository` → `domain` / `dto`):**
   - Strict separation of concerns keeping presentation, business invariants, data access, and domain mapping decoupled.
   - **Constructor Injection & Interface Abstraction**: Services exposed via interfaces (`CategoryService`, `BookmarkService`) and implemented with constructor injection for testability without reflection.
 
-- **🔗 Relational Domain Modeling & N+1 Prevention (`domain/`, `repository/`):**
+- ** Relational Domain Modeling & N+1 Prevention (`domain/`, `repository/`):**
   - **`@ManyToOne(fetch = FetchType.LAZY)`**: Proper lazy-loading relationships between `Bookmark` and `Category`.
   - **`@EntityGraph` & `JOIN FETCH`**: High-performance eager joins eliminating the Hibernate N+1 query problem on list, search, and pagination endpoints.
   - **Domain Invariant & Cascades**: Foreign key constraint enforcement preventing orphaned bookmarks and restricting category deletion when bookmarks exist.
   - **Atomic Category Reassignment**: Bulk reassign bookmarks to a target category in a single atomic SQL update before deletion.
 
-- **📦 Flyway Schema Versioning & PostgreSQL 16 (`db/migration/`):**
+- ** Flyway Schema Versioning & PostgreSQL 16 (`db/migration/`):**
   - **`V1__create_categories_table.sql`**: Category table with unique constraints, check constraints, and UUID primary keys.
   - **`V2__create_bookmarks_table.sql`**: Bookmark table with foreign key indices (`idx_bookmarks_category_id`), title search index, and audit timestamp tracking.
 
-- **🛡️ Custom Jakarta Bean Validation (`validation/`):**
+- ** Custom Jakarta Bean Validation (`validation/`):**
   - **`@ValidUrl` / `ValidUrlValidator`**: Custom RFC-compliant URI validator enforcing valid schemes (`http`, `https`) and well-formed hostnames.
   - **`@HexColor` / `HexColorValidator`**: Regex-backed custom validator guaranteeing valid 6-character hex color codes (e.g. `#3B82F6`).
 
-- **📑 Immutable Java 21 Records & DTO Pattern (`dto/`):**
+- ** Immutable Java 21 Records & DTO Pattern (`dto/`):**
   - **Information Hiding**: `CategoryCreateRequest`, `BookmarkCreateRequest`, `BookmarkUpdateRequest`, and `CategoryResponse` decouple internal persistence state from the public HTTP wire contract.
   - **Static Factory Mappers**: Encapsulated entity-to-DTO transformation methods (`BookmarkResponse.from(Bookmark)`).
 
-- **🚨 Centralized RFC 7807 Error Handling (`exception/GlobalExceptionHandler.java`):**
+- ** Centralized RFC 7807 Error Handling (`exception/GlobalExceptionHandler.java`):**
   - **Global Controller Advice (`@RestControllerAdvice`)**: Intercepts domain and validation exceptions across all endpoints.
   - **Standardized `ProblemDetail` JSON**: Emits IETF RFC 7807 error structures for `404 Not Found`, `409 Conflict`, `400 Bad Request`, and unexpected errors.
   - **Detailed Validation Errors**: Structures field-level constraint violations into an intuitive key-value map for frontend consumption.
 
-- **🧪 Comprehensive 3-Tier Testing Pyramid (69 Passing Tests):**
+- ** Comprehensive 3-Tier Testing Pyramid (69 Passing Tests):**
   - **Unit Tests (`service/`, `validation/`)**: 46 isolated tests for business rules and custom validators using **JUnit 5**, **Mockito**, and **AssertJ**.
   - **Data Slice Tests (`BookmarkRepositoryTest.java`)**: 3 tests using `@DataJpaTest` against live PostgreSQL verifying custom derived queries, `@EntityGraph` joins, and bulk update queries.
   - **Web Slice Tests (`controller/`)**: 19 tests using `@WebMvcTest` with **MockMvc** verifying HTTP status codes, JSONPath assertions, headers, and validation failures.
@@ -41,7 +41,7 @@ A robust, production-grade Relational Bookmarks & Categories REST API built with
 
 ---
 
-## 🛠️ Tech Stack
+##  Tech Stack
 
 - **Framework:** [Spring Boot 3.3.4](https://spring.io/projects/spring-boot)
 - **Language:** [Java 21 LTS](https://openjdk.org/projects/jdk/21/)
@@ -55,7 +55,7 @@ A robust, production-grade Relational Bookmarks & Categories REST API built with
 
 ---
 
-## 🏛️ Database Design & Entity Relationship Diagram (ERD)
+##  Database Design & Entity Relationship Diagram (ERD)
 
 ```mermaid
 erDiagram
@@ -84,7 +84,7 @@ erDiagram
 
 ---
 
-## 📁 Project Architecture
+##  Project Architecture
 
 ```text
 src/
@@ -151,7 +151,7 @@ src/
 
 ---
 
-## 📡 REST API Endpoints
+##  REST API Endpoints
 
 ### Categories (`/api/v1/categories`)
 
@@ -177,7 +177,7 @@ src/
 
 ---
 
-## 🚀 Getting Started
+##  Getting Started
 
 ### Prerequisites
 Make sure you have the following installed on your system:
